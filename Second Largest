@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+#include <climits>
+int main(){
+int n;
+    cin>>n;
+    if(n==0 || n==1){
+        cout<<INT_MIN;
+        return 0;
+    }
+    int maxi=INT_MIN;
+    int s_maxi=INT_MIN;
+    while(n--){
+        int num;
+        cin>>num;
+        if(num>maxi){
+            s_maxi=maxi;
+            maxi=num;
+        }
+        else if(num>s_maxi && num!=maxi){
+            s_maxi=num;
+        }
+    }
+    cout<<s_maxi;
+}
+
+
